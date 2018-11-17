@@ -66,4 +66,15 @@ module.exports = {
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
   }
+
+  // 路由接口代理配置
+    proxyTable: {
+      '/api': {
+        target: 'https://localhost:8008',
+        changeOrigin: true,
+        pathRewrite: {
+            '^/api': ''
+        }
+      }
+    }
 }
