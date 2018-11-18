@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 var axios = require('axios')
-axios.defaults.baseURL = 'https://localhost:8008/api'
+axios.defaults.baseURL = 'http://localhost:8008/api'
 
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false

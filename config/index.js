@@ -10,7 +10,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api': {
+            target: 'http://localhost:8008',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/api': ''
+            }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -67,14 +75,4 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   }
 
-  // 路由接口代理配置
-    proxyTable: {
-      '/api': {
-        target: 'https://localhost:8008',
-        changeOrigin: true,
-        pathRewrite: {
-            '^/api': ''
-        }
-      }
-    }
 }
